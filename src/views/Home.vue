@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <el-container class="back">
+    <el-header><common-header></common-header></el-header>
+    <el-container>
+      <el-aside width="100px"><common-aside></common-aside></el-aside>
+      <el-main><router-view></router-view></el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import CommonHeader from "../components/CommonHeader";
+import CommonAside from "../components/CommonAside";
 export default {
-  name: "Home",
+  name: "home",
   components: {
-    HelloWorld
+    CommonHeader,
+    CommonAside
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.back {
+  background: url("../assets/images/back.png");
+  background-size: cover;
+}
+</style>
